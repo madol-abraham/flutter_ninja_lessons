@@ -1,40 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:mvp/home.dart';
 
 void main() {
-  runApp(MaterialApp(
-    home: Scaffold(
-      appBar: AppBar(
-        title: Text('Hello World'),
-        backgroundColor:Colors.brown[700],
-        centerTitle: true,
-      ),
-     body: const Home(),
-    )
+  runApp(const MaterialApp(
+    home: Home()
   ));
 }
-
-// statless widget
-class Home extends StatelessWidget {
-  const Home ({super.key});
+class Sandbox extends StatelessWidget {
+  const Sandbox({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.lightBlueAccent,
-      //width: 100,
-      //height: 100,
-      padding: const EdgeInsets.all(20),
-      margin: const EdgeInsets.fromLTRB(10, 40, 0, 0),
-      child: const Text('flutter app', style: TextStyle(
-        fontSize: 18,
-        letterSpacing: 4,
-        decoration: TextDecoration.underline,
-        fontStyle: FontStyle.italic,
-        
-      )),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Sandbox'),
+        backgroundColor: Colors.grey,
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          
+          Container(
+          width: 100,
+          color: Colors.red,
+          child: const Text('one'),
+          ),
+          Container(
+          width: 200,
+          color: Colors.green,
+          child: const Text('two'),
+          ),
+          Container(
+          width: 300,
+          color: Colors.blue,
+          child: const Text('three'),
+          ),
+        ],
+      ),
     );
+    
   }
 }
-
-// container
-//-- wraps other widgets
